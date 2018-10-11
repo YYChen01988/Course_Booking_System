@@ -30,4 +30,9 @@ public class CustomerController {
     public List<Customer> getCustomersOverAgeFromTownOnCourse(@PathVariable int age, @PathVariable String name, @PathVariable Long id){
         return customerRepository.getCustomersOverAgeFromTownOnCourse(age, name, id);
     }
+
+    @GetMapping(value = "/town/{name}")
+    public List<Customer> getCustomersFromTown(@PathVariable String name){
+        return customerRepository.getCustomersFromTown(name);
+    }
 }
