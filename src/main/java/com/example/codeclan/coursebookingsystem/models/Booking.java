@@ -19,7 +19,9 @@ public class Booking {
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
     private  Customer customer;
 
     public Booking(String date, Course course, Customer customer) {
