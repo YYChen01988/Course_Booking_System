@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CustomerRepositoryCustom {
     List<Customer> getCustomersOnCourse(Long courseId);
+    List<Customer> getCustomersFromTownOnCourse(String town, Long courseId);
+    List<Customer> getCustomersOverAgeFromTownOnCourse(int age, String town, Long courseId);
 }
