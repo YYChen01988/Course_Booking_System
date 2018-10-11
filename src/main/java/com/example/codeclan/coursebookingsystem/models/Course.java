@@ -63,6 +63,11 @@ public class Course {
     }
 
     public int getRating() {
+        if (this.rating>5 ){
+            this.rating = 5;
+        }else if (this.rating <0){
+            this.rating = 0;
+        }
         return rating;
     }
 
