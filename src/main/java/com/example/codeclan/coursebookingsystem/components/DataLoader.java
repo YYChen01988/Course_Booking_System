@@ -11,6 +11,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -38,10 +41,13 @@ public class DataLoader implements ApplicationRunner {
         Customer customer2 = new Customer("Alan", "Aberdeen", 80);
         customerRepository.save(customer2);
 
+        String date = new String("11-10-18");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(date);
+        date = simpleDateFormat.format(new Date());
 
-        Booking booking1 = new Booking("11-10-18", python, customer1);
-        Booking booking2 = new Booking("11-10-18", python, customer2);
-        Booking booking3 = new Booking("11-10-18", cSharp, customer1);
+        Booking booking1 = new Booking(date, python, customer1);
+        Booking booking2 = new Booking(date, python, customer2);
+        Booking booking3 = new Booking(date, cSharp, customer1);
         bookingRepository.save(booking1);
         bookingRepository.save(booking2);
         bookingRepository.save(booking3);
